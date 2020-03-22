@@ -1,0 +1,32 @@
+.messages header {
+    text-transform: uppercase;
+    margin: 30px;
+    font-weight: bold;
+}
+
+.dialogsWrapper {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+
+.dialogsList, .messagesList {
+    margin: 30px 0 0 30px;
+}
+
+.dialogsItem, .messagesItem {
+    padding: 15px;
+}
+
+.dialogsLink {
+    text-decoration: none;
+    color: #000;
+}
+
+.dialogsLink:hover {
+    font-size: 20px;
+}
+
+.dialogsLink.active {
+    color: darkred;
+    outline: none;
+}

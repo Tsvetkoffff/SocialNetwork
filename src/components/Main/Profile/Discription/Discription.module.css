@@ -1,0 +1,14 @@
+.persen {
+    display: flex;
+}
+
+.persen img {
+    height: 100px;
+    border-radius: 100px;
+    padding: 20px;
+}
+
+.persen p {
+    align-self: center;
+    padding: 30px;
+}

@@ -1,0 +1,17 @@
+.dialogsItem, .messagesItem {
+    padding: 15px;
+}
+
+.dialogsLink {
+    text-decoration: none;
+    color: #000;
+}
+
+.dialogsLink:hover {
+    font-size: 20px;
+}
+
+.dialogsLink.active {
+    color: darkred;
+    outline: none;
+}
