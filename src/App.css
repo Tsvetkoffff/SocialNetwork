@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
 
 .app-wrapper {
-    display: grid;
+    display              : grid;
     grid-template-columns: 2fr 10fr;
-    grid-template-rows: 1fr 5fr 1fr;
-    grid-template-areas: 
-    "h h"
-    "a m"
-    "f f";
+    grid-template-rows   : 1fr 5fr 1fr;
+    grid-template-areas  :
+        "h h"
+        "a m"
+        "f f";
     grid-gap: 10px;
+
     min-height: 100vh;
 
     font-family: 'Open Sans', sans-serif;
@@ -16,14 +17,15 @@
 
 @media (max-width: 490px) {
     .app-wrapper {
-        min-width: 320px;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 2fr 5fr 1fr;
-        grid-gap: 0;
-        grid-template-areas:
-        "h"
-        "a"
-        "m"
-        "f";
+        grid-template-rows   : 1fr 2fr 5fr 1fr;
+        grid-gap             : 0;
+        grid-template-areas  :
+            "h"
+            "a"
+            "m"
+            "f";
+
+        min-width: 320px;
     }
 }

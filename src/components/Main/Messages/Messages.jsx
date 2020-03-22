@@ -9,14 +9,14 @@ const Messages = () => {
             <header>Dialogs</header>
             <div className={s.dialogsWrapper}>
                 <div className={s.dialogsList}>
-                    <DialogsItem name='Bob' id='1'/>
-                    <DialogsItem name='Sara' id='2'/>
-                    <DialogsItem name='Jon' id='3'/>
-                    <DialogsItem name='Ben' id='4'/>
+                    <DialogsItem name='Bob' id='1' />
+                    <DialogsItem name='Sara' id='2' />
+                    <DialogsItem name='Jon' id='3' />
+                    <DialogsItem name='Ben' id='4' />
                 </div>
                 <div className={s.messagesList}>
-                    <MessagesItem message='Fuck you'/>
-                    <MessagesItem message='Bla bla bla'/>
+                    <MessagesItem message='Fuck you' />
+                    <MessagesItem message='Bla bla bla' />
                 </div>
             </div>
         </section>

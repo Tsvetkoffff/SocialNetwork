@@ -1,10 +1,11 @@
-.dialogsItem, .messagesItem {
+.dialogsItem,
+.messagesItem {
     padding: 15px;
 }
 
 .dialogsLink {
     text-decoration: none;
-    color: #000;
+    color          : #000;
 }
 
 .dialogsLink:hover {
@@ -12,6 +13,6 @@
 }
 
 .dialogsLink.active {
-    color: darkred;
+    color  : darkred;
     outline: none;
 }

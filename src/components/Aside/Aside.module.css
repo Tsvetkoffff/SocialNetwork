@@ -1,8 +1,8 @@
 .aside {
-    grid-area: a;
+    grid-area       : a;
     background-color: tomato;
-    display: grid;
-    align-items: center;
+    display         : grid;
+    align-items     : center;
 }
 
 .nav_list {
@@ -14,11 +14,11 @@
 }
 
 .nav_link {
-    color: #fff;
+    color          : #fff;
     text-decoration: none;
 }
 
 .nav_link.active {
-    color: black;
+    color  : black;
     outline: none;
 }

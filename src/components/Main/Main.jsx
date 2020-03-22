@@ -9,14 +9,14 @@ import Settings from "./Settings/Settings";
 
 const Main = () => {
     return (
-            <main className={s.main}>
-                {/*<Redirect from='/' to='Profile'/>*/}
-                <Route path='/Profile' component={Profile}/>
-                <Route path='/Messages' component={Messages}/>
-                <Route path='/News' component={News}/>
-                <Route path='/Music' component={Music}/>
-                <Route path='/Settings' component={Settings}/>
-            </main>
+        <main className={s.main}>
+            {/*<Redirect from='/' to='Profile'/>*/}
+            <Route path='/Profile' component={Profile} />
+            <Route path='/Messages' component={Messages} />
+            <Route path='/News' component={News} />
+            <Route path='/Music' component={Music} />
+            <Route path='/Settings' component={Settings} />
+        </main>
     )
 };
 

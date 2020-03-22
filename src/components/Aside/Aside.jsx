@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './Aside.module.css';
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Aside = () => {
     return (

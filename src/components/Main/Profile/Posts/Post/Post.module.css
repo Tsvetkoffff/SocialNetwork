@@ -1,14 +1,14 @@
 .post {
-    display: flex;
+    display    : flex;
     padding-top: 20px;
 }
 
 .post img {
-    height: 50px;
+    height       : 50px;
     border-radius: 50px;
 }
 
 .post div {
-    align-self: center;
+    align-self : center;
     margin-left: 30px;
 }

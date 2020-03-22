@@ -8,8 +8,8 @@ const Posts = () => {
             <p>My posts</p>
             <input type='text'></input>
             <button>Add post</button>
-            <Post message='Hi'/>
-            <Post message='Yo'/>
+            <Post message='Hi' />
+            <Post message='Yo' />
         </div>
     )
 };
