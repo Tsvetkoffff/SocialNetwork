@@ -3,20 +3,23 @@ import s from './Messages.module.css';
 import DialogsItem from "./DialogsItem/DialogsItem";
 import MessagesItem from "./MessagesItem/MessagesItem";
 
-const Messages = () => {
+const Messages = (props) => {
+
+    let dialogsElements = props.dialogs
+        .map(d => <DialogsItem name={d.name} id={d.id} />);
+
+    let messagesElelments = props.messages
+        .map(m => <MessagesItem message={m.message} />);
+
     return (
         <section className={s.messages}>
             <header>Dialogs</header>
             <div className={s.dialogsWrapper}>
                 <div className={s.dialogsList}>
-                    <DialogsItem name='Bob' id='1' />
-                    <DialogsItem name='Sara' id='2' />
-                    <DialogsItem name='Jon' id='3' />
-                    <DialogsItem name='Ben' id='4' />
+                    {dialogsElements}
                 </div>
                 <div className={s.messagesList}>
-                    <MessagesItem message='Fuck you' />
-                    <MessagesItem message='Bla bla bla' />
+                    {messagesElelments}
                 </div>
             </div>
         </section>

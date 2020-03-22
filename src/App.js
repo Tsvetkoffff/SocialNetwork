@@ -5,12 +5,15 @@ import Aside from './components/Aside/Aside';
 import Main from './components/Main/Main';
 import Footer from './components/Footer/Footer';
 
-function App() {
+function App(props) {
     return (
         <div className='app-wrapper'>
             <Header />
             <Aside />
-            <Main />
+            <Main 
+            posts={props.posts}
+            dialogs={props.dialogs}
+            messages={props.messages} />
             <Footer />
         </div>
     )

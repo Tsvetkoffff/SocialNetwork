@@ -7,15 +7,17 @@ import News from "./News/News";
 import Music from "./Music/Music";
 import Settings from "./Settings/Settings";
 
-const Main = () => {
+const Main = (props) => {
     return (
         <main className={s.main}>
-            {/*<Redirect from='/' to='Profile'/>*/}
-            <Route path='/Profile' component={Profile} />
-            <Route path='/Messages' component={Messages} />
-            <Route path='/News' component={News} />
-            <Route path='/Music' component={Music} />
-            <Route path='/Settings' component={Settings} />
+            <Redirect from='/' to='Profile'/>
+            <Route path='/Profile' render={() => 
+            <Profile posts={props.posts} />} />
+            <Route path='/Messages' render={() => 
+            <Messages dialogs={props.dialogs} messages={props.messages} />} />
+            <Route path='/News' render={News} />
+            <Route path='/Music' render={Music} />
+            <Route path='/Settings' render={Settings} />
         </main>
     )
 };
