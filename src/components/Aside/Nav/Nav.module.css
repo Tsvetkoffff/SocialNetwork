@@ -1,0 +1,18 @@
+.nav_list {
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+.nav_item {
+    padding: 20px;
+}
+
+.nav_link {
+    color          : #fff;
+    text-decoration: none;
+}
+
+.nav_link.active {
+    color  : black;
+    outline: none;
+}
