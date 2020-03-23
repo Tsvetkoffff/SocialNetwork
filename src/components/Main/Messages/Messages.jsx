@@ -5,11 +5,17 @@ import MessagesItem from "./MessagesItem/MessagesItem";
 
 const Messages = (props) => {
 
-    let dialogsElements = props.dialogs
+    let dialogsElements = props.state.dialogsData
         .map(d => <DialogsItem name={d.name} id={d.id} />);
 
-    let messagesElelments = props.messages
+    let messagesElelments = props.state.messagesData
         .map(m => <MessagesItem message={m.message} />);
+
+    let newMessageText = React.createRef();
+
+    let addMessage = () => {
+        alert(newMessageText.current.value)
+    }
 
     return (
         <section className={s.messages}>
@@ -20,6 +26,10 @@ const Messages = (props) => {
                 </div>
                 <div className={s.messagesList}>
                     {messagesElelments}
+                </div>
+                <div className={s.messageAdd}>
+                    <input type="text" ref={newMessageText} />
+                    <button onClick={addMessage}>Sent</button>
                 </div>
             </div>
         </section>
