@@ -10,16 +10,16 @@ import Settings from "./Settings/Settings";
 const Main = (props) => {
     return (
         <main className={s.main}>
-            <Redirect from='/' to='Profile'/>
+            {/* <Redirect from='/' to='Profile'/> */}
             <Route path='/Profile' render={() => 
-            <Profile posts={props.posts} />} />
+            <Profile state={props.state.profilePage} />} />
             <Route path='/Messages' render={() => 
-            <Messages dialogs={props.dialogs} messages={props.messages} />} />
+            <Messages state={props.state.messagesPage} />} />
             <Route path='/News' render={News} />
             <Route path='/Music' render={Music} />
             <Route path='/Settings' render={Settings} />
         </main>
     )
 };
-
+ 
 export default Main
