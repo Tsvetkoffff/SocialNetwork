@@ -9,11 +9,8 @@ function App(props) {
     return (
         <div className='app-wrapper'>
             <Header />
-            <Aside />
-            <Main 
-            posts={props.posts}
-            dialogs={props.dialogs}
-            messages={props.messages} />
+            <Aside state={props.state.asideData}/>
+            <Main state={props.state} />
             <Footer />
         </div>
     )
