@@ -12,7 +12,7 @@ const Main = (props) => {
         <main className={s.main}>
             {/* <Redirect from='/' to='Profile'/> */}
             <Route path='/Profile' render={() => 
-            <Profile state={props.state.profilePage} />} />
+            <Profile state={props.state.profilePage} addPost={props.addPost} />} />
             <Route path='/Messages' render={() => 
             <Messages state={props.state.messagesPage} />} />
             <Route path='/News' render={News} />

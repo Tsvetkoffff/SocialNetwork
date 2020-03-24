@@ -7,7 +7,7 @@ const Profile = (props) => {
     return (
         <section className={s.profile}>
             <Discription />
-            <Posts state={props.state.postsData}/>
+            <Posts state={props.state.postsData} addPost={props.addPost} />
         </section>
     )
 };
