@@ -1,5 +1,4 @@
 
-import { rerender } from './../render';
 
 let state = {
 
@@ -49,7 +48,11 @@ let state = {
     }
 }
 
-export let addPost = () => {
+let rerender = () => {
+
+}
+
+export const addPost = () => {
     let newPost = {
         id: 5, 
         message: state.profilePage.newPostText, 
@@ -60,9 +63,13 @@ export let addPost = () => {
     rerender(state)
 }
 
-export let updateNewPostText = (newText) => {
+export const updateNewPostText = (newText) => {
     state.profilePage.newPostText = newText
     rerender(state)
+}
+
+export const subscribe = (observer) => {
+    rerender = observer
 }
 
 export default state
