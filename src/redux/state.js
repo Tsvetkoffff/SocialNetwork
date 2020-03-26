@@ -8,7 +8,8 @@ let state = {
             { id: 1, message: 'Post 1', likesCount: 45 },
             { id: 2, message: 'Post 2', likesCount: 54 },
             { id: 3, message: 'Post 3', likesCount: 67 }
-        ]
+        ],
+        newPostText: 'Hi'
     },
 
 
@@ -48,13 +49,19 @@ let state = {
     }
 }
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
     let newPost = {
         id: 5, 
-        message: postMessage, 
+        message: state.profilePage.newPostText, 
         likesCount: 0
     }
     state.profilePage.postsData.push(newPost)
+    state.profilePage.newPostText = ''
+    rerender(state)
+}
+
+export let updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText
     rerender(state)
 }
 

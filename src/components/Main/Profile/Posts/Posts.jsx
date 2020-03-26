@@ -4,21 +4,25 @@ import Post from "./Post/Post";
 
 const Posts = (props) => {
 
-    let postsElements = props.state
+    let postsElements = props.postsData
     .map(p => <Post message={p.message} likesCount={p.likesCount} />);
 
-    let newPostText = React.createRef();
+    let newPostElement = React.createRef();
 
     let addPost = () => {
-        let text = newPostText.current.value;
-        props.addPost(text)
-        newPostText.current.value = ''
+        props.addPost()
+    }
+
+    let onPostChange = () => {
+        let text = newPostElement.current.value;
+        props.updateNewPostText(text)
     }
 
     return (
         <div className={s.posts}>
             <p>My posts</p>
-            <input type='text' ref={newPostText}></input>
+            <input  type='text' ref={newPostElement} 
+                    onChange={onPostChange} value={props.newPostText}/>
             <button onClick={addPost}>Add post</button>
             {postsElements}
         </div>
