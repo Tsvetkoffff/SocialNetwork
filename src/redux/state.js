@@ -8,7 +8,11 @@ let state = {
             { id: 2, message: 'Post 2', likesCount: 54 },
             { id: 3, message: 'Post 3', likesCount: 67 }
         ],
-        newPostText: 'Hi'
+        newPostText: 'Hi',
+        updateNewPostText: (newText) => {
+            state.profilePage.newPostText = newText
+            rerender(state)
+        }
     },
 
 
