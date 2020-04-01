@@ -8,7 +8,8 @@ const Profile = (props) => {
         <section className={s.profile}>
             <Discription />
             <Posts  profilePage={props.profilePage} 
-                    addPost={props.addPost} />
+                    addPost={props.addPost}
+                    updateNewPostText={props.updateNewPostText} />
         </section>
     )
 };
