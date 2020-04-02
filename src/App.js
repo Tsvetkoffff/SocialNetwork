@@ -11,8 +11,7 @@ function App(props) {
             <Header />
             <Aside state={props.state.asideData}/>
             <Main   state={props.state} 
-                    addPost={props.addPost}
-                    updateNewPostText={props.updateNewPostText} />
+                    dispatch={props.dispatch} />
             <Footer />
         </div>
     )

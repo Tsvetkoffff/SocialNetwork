@@ -10,11 +10,10 @@ import Settings from "./Settings/Settings";
 const Main = (props) => {
     return (
         <main className={s.main}>
-            {/* <Redirect from='/' to='Profile'/> */}
+            <Redirect from='/' to='Profile'/>
             <Route path='/Profile' render={() => 
             <Profile    profilePage={props.state.profilePage} 
-                        addPost={props.addPost}
-                        updateNewPostText={props.updateNewPostText} />} />
+                        dispatch={props.dispatch} />} />
             <Route path='/Messages' render={() => 
             <Messages state={props.state.messagesPage} />} />
             <Route path='/News' render={News} />
