@@ -15,7 +15,8 @@ const Main = (props) => {
             <Profile    profilePage={props.state.profilePage} 
                         dispatch={props.dispatch} />} />
             <Route path='/Messages' render={() => 
-            <Messages state={props.state.messagesPage} />} />
+            <Messages   messagesPage={props.state.messagesPage}
+                        dispatch={props.dispatch} />} />
             <Route path='/News' render={News} />
             <Route path='/Music' render={Music} />
             <Route path='/Settings' render={Settings} />
