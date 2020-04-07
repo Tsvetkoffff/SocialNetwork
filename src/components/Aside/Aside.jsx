@@ -1,13 +1,13 @@
 import React from 'react';
 import s from './Aside.module.css';
 import Nav from './Nav/Nav';
-import Frends from './Frends/Frends';
+import Friends from './Friends/Friends';
 
 const Aside = (props) => {
     return (
         <aside className={s.aside}>
             <Nav />
-            <Frends state={props.state.frendsData} />
+            <Friends state={props.state.friendsData} />
         </aside>
     )
 };

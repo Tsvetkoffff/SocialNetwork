@@ -1,9 +1,9 @@
 import React from 'react'
-import s from './Frends.module.css'
+import s from './Friends.module.css'
 
-const Frends = (props) => {
+const Friends = (props) => {
 
-    let frendsElement = props.state
+    let friendsElement = props.state
         .map(f => (
             <li>
                 <img
@@ -15,9 +15,9 @@ const Frends = (props) => {
 
     return (
         <ul>
-            {frendsElement}
+            {friendsElement}
         </ul>
     )
 }
 
-export default Frends
+export default Friends
