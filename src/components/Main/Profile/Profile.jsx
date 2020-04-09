@@ -1,14 +1,13 @@
 import React from 'react';
 import s from './Profile.module.css';
 import Discription from "./Discription/Discription";
-import Posts from "./Posts/Posts";
+import PostsContainer from "./Posts/PostsContainer";
 
 const Profile = (props) => {
     return (
         <section className={s.profile}>
             <Discription />
-            <Posts  profilePage={props.profilePage} 
-                    dispatch={props.dispatch} />
+            <PostsContainer  store={props.store} />
         </section>
     )
 };

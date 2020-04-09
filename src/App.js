@@ -10,8 +10,7 @@ function App(props) {
         <div className='app-wrapper'>
             <Header />
             <Aside state={props.state.asideData}/>
-            <Main   state={props.state} 
-                    dispatch={props.dispatch} />
+            <Main   store={props.store} />
             <Footer />
         </div>
     )
