@@ -6,15 +6,15 @@ import './index.css';
 import './reset.css';
 import * as serviceWorker from './serviceWorker';
 import store from './redux/reduxStore';
+import {Provider} from "react-redux";
 
-let rerender = (state) => {
+let rerender = () => {
     ReactDOM.render(
         <BrowserRouter>
-            <App    state={state} 
-                    dispatch={store.dispatch.bind(store)}
-                    store={store} />
-        </BrowserRouter>,
-        document.getElementById('root'));
+             <Provider store={store}>
+                <App />
+             </Provider>
+        </BrowserRouter>, document.getElementById('root'));
 };
 
 rerender(store.getState());

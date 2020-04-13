@@ -12,9 +12,9 @@ const Main = (props) => {
         <main className={s.main}>
             <Redirect from='/' to='Profile'/>
             <Route path='/Profile' render={() => 
-            <Profile store={props.store} />} />
+            <Profile />} />
             <Route path='/Messages' render={() => 
-            <MessagesContainer store={props.store} />} />
+            <MessagesContainer />} />
             <Route path='/News' render={News} />
             <Route path='/Music' render={Music} />
             <Route path='/Settings' render={Settings} />

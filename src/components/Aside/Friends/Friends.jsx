@@ -3,7 +3,7 @@ import s from './Friends.module.css'
 
 const Friends = (props) => {
 
-    let friendsElement = props.state
+    let friendsElement = props.friendsData
         .map(f => (
             <li>
                 <img
@@ -11,13 +11,13 @@ const Friends = (props) => {
                     alt="Avatar" className={s.avatar} />
                 <span>{f.name}</span>
             </li>
-        ))
+        ));
 
     return (
         <ul>
             {friendsElement}
         </ul>
     )
-}
+};
 
 export default Friends
