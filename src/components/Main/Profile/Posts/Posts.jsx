@@ -4,8 +4,8 @@ import s from './Posts.module.css';
 
 const Posts = (props) => {
     let postsElements = props.postsData
-    .map(p => <Post message={p.message} likesCount={p.likesCount} />);
-    console.log(props);
+    .map(p => <Post message={p.message} likesCount={p.likesCount} key={p.id}/>);
+
     let newPostElement = React.createRef();
 
     let onPostAdd = () => {

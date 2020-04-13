@@ -6,10 +6,10 @@ import MessagesItem from "./MessagesItem/MessagesItem";
 const Messages = (props) => {
 
     let dialogsElements = props.dialogsData
-        .map(d => <DialogsItem name={d.name} id={d.id} />);
+        .map(d => <DialogsItem name={d.name} key={d.id} />);
 
     let messagesElements = props.messagesData
-        .map(m => <MessagesItem message={m.message} />);
+        .map(m => <MessagesItem message={m.message} key={m.id} />);
 
     let onMessageTextChange = (e) => {
         let text = e.target.value;
