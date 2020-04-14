@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './Nav.module.css';
-import { NavLink } from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 
 const Nav = (props) => {
@@ -14,6 +14,11 @@ const Nav = (props) => {
             <li className={s.nav_item}>
                 <NavLink to='/Messages' className={s.nav_link} activeClassName={s.active}>
                     Messages
+                </NavLink>
+            </li>
+            <li className={s.nav_item}>
+                <NavLink to='/Users' className={s.nav_link} activeClassName={s.active}>
+                    Users
                 </NavLink>
             </li>
             <li className={s.nav_item}>
