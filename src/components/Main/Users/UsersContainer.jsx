@@ -1,16 +1,9 @@
 import {connect} from "react-redux";
-import {
-    followAC,
-    setUsersCountAC,
-    setCurrentPageAC,
-    setUsersAC,
-    unfollowAC,
-    setIsLoadingAC
-} from "../../../redux/usersReducer";
 import React from "react";
 import * as axios from "axios";
 import Users from "./Users";
 import Preloader from "../../common/Preloader/Preloader";
+import {follow, setCurrentPage, setIsLoading, setUsers, setUsersCount, unfollow} from "../../../redux/usersReducer";
 
 class UsersContainer extends React.Component {
 
@@ -39,8 +32,8 @@ class UsersContainer extends React.Component {
                      pageSize={this.props.pageSize}
                      onPageChanged={this.onPageChanged}
                      currentPage={this.props.currentPage}
-                     onUnfollow={this.props.onUnfollow}
-                     onFollow={this.props.onFollow}
+                     unfollow={this.props.unfollow}
+                     follow={this.props.follow}
                      users={this.props.users}/>
         </>
     }
@@ -55,15 +48,6 @@ let mapStateToProps = (state) => {
         isLoading: state.usersPage.isLoading
     }
 };
-let mapDispatchToProps = (dispatch) => {
-    return {
-        onFollow: (id) => dispatch(followAC(id)),
-        onUnfollow: (id) => dispatch(unfollowAC(id)),
-        setUsers: (users) => dispatch(setUsersAC(users)),
-        setCurrentPage: (currentPage) => dispatch(setCurrentPageAC(currentPage)),
-        setUsersCount: (count) => dispatch(setUsersCountAC(count)),
-        setIsLoading: (isLoading) => dispatch(setIsLoadingAC(isLoading))
-    }
-};
 
-export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer);
+export default connect(mapStateToProps, {follow, unfollow, setUsers, setCurrentPage, setUsersCount, setIsLoading
+    })(UsersContainer);

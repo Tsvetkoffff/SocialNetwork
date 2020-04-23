@@ -6,11 +6,11 @@ const SET_USERS_COUNT = 'SET_USERS_COUNT';
 const SET_ISLOADING_STATUS = 'SET_ISLOADING_STATUS';
 
 let initialState = {
-    users: [],
-    totalUsersCount: 0,
-    pageSize: 15,
-    currentPage: 1,
-    isLoading: false
+        users: [],
+        totalUsersCount: 0,
+        pageSize: 15,
+        currentPage: 1,
+        isLoading: false
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -46,11 +46,11 @@ const usersReducer = (state = initialState, action) => {
     }
 };
 
-export const setUsersAC = (users) => ({type: SET_USERS, users});
-export const followAC = (id) => ({type: FOLLOW, id: id});
-export const unfollowAC = (id) => ({type: UNFOLLOW, id: id});
-export const setCurrentPageAC = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage});
-export const setUsersCountAC = (count) => ({type: SET_USERS_COUNT, count});
-export const setIsLoadingAC = (isLoading) => ({type: SET_ISLOADING_STATUS, isLoading});
+export const setUsers = (users) => ({type: SET_USERS, users});
+export const follow = (id) => ({type: FOLLOW, id: id});
+export const unfollow = (id) => ({type: UNFOLLOW, id: id});
+export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage});
+export const setUsersCount = (count) => ({type: SET_USERS_COUNT, count});
+export const setIsLoading = (isLoading) => ({type: SET_ISLOADING_STATUS, isLoading});
 
 export default usersReducer;

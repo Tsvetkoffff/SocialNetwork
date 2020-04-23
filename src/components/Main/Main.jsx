@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './Main.module.css';
 import {Route, Redirect} from "react-router-dom";
-import Profile from "./Profile/Profile";
+import ProfileContainer from "./Profile/ProfileContainer";
 import News from "./News/News";
 import Music from "./Music/Music";
 import Settings from "./Settings/Settings";
@@ -13,7 +13,7 @@ const Main = (props) => {
         <main className={s.main}>
             <Redirect from='/' to='Users'/>
             <Route path='/Profile' render={() =>
-                <Profile/>}/>
+                <ProfileContainer/>}/>
             <Route path='/Messages' render={() =>
                 <MessagesContainer/>}/>
             <Route path='/Users' render={() =>
