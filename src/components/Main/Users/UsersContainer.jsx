@@ -1,33 +1,48 @@
 import {connect} from "react-redux";
-import {followAC, setUsersCountAC, setCurrentPageAC, setUsersAC, unfollowAC} from "../../../redux/usersReducer";
+import {
+    followAC,
+    setUsersCountAC,
+    setCurrentPageAC,
+    setUsersAC,
+    unfollowAC,
+    setIsLoadingAC
+} from "../../../redux/usersReducer";
 import React from "react";
 import * as axios from "axios";
 import Users from "./Users";
+import Preloader from "../../common/Preloader/Preloader";
 
 class UsersContainer extends React.Component {
 
     componentDidMount() {
+        this.props.setIsLoading(true);
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.pageSize}&page=${this.props.currentPage}`).then(response => {
+            this.props.setIsLoading(false);
             this.props.setUsers(response.data.items);
             this.props.setUsersCount(response.data.totalCount);
         })
     };
 
     onPageChanged = (currentPage) => {
+        this.props.setIsLoading(true);
         this.props.setCurrentPage(currentPage);
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.pageSize}&page=${currentPage}`).then(response => {
+            this.props.setIsLoading(false);
             this.props.setUsers(response.data.items);
         })
     };
 
     render() {
-        return <Users   totalUsersCount={this.props.totalUsersCount}
-                        pageSize={this.props.pageSize}
-                        onPageChanged={this.onPageChanged}
-                        currentPage={this.props.currentPage}
-                        onUnfollow={this.props.onUnfollow}
-                        onFollow={this.props.onFollow}
-                        users={this.props.users}/>
+        return <>
+            {this.props.isLoading ? <Preloader/> : null}
+            <Users   totalUsersCount={this.props.totalUsersCount}
+                     pageSize={this.props.pageSize}
+                     onPageChanged={this.onPageChanged}
+                     currentPage={this.props.currentPage}
+                     onUnfollow={this.props.onUnfollow}
+                     onFollow={this.props.onFollow}
+                     users={this.props.users}/>
+        </>
     }
 }
 
@@ -36,7 +51,8 @@ let mapStateToProps = (state) => {
         users: state.usersPage.users,
         totalUsersCount: state.usersPage.totalUsersCount,
         pageSize: state.usersPage.pageSize,
-        currentPage: state.usersPage.currentPage
+        currentPage: state.usersPage.currentPage,
+        isLoading: state.usersPage.isLoading
     }
 };
 let mapDispatchToProps = (dispatch) => {
@@ -45,7 +61,8 @@ let mapDispatchToProps = (dispatch) => {
         onUnfollow: (id) => dispatch(unfollowAC(id)),
         setUsers: (users) => dispatch(setUsersAC(users)),
         setCurrentPage: (currentPage) => dispatch(setCurrentPageAC(currentPage)),
-        setUsersCount: (count) => dispatch(setUsersCountAC(count))
+        setUsersCount: (count) => dispatch(setUsersCountAC(count)),
+        setIsLoading: (isLoading) => dispatch(setIsLoadingAC(isLoading))
     }
 };
 
