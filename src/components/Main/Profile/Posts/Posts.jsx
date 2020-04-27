@@ -8,8 +8,9 @@ const Posts = (props) => {
 
     let newPostElement = React.createRef();
 
-    let onPostAdd = () => {
-        props.addPost()
+    let onPostAdd = (event) => {
+        props.addPost();
+        event.preventDefault();
     };
 
     let onPostChange = () => {
@@ -20,11 +21,13 @@ const Posts = (props) => {
     return (
         <div className={s.posts}>
             <p>My posts</p>
+            <form onSubmit={onPostAdd}>
             <input  type='text'
                     ref={newPostElement}
                     onChange={onPostChange}
                     value={props.newPostText}/>
-            <button onClick={onPostAdd}>Add post</button>
+            <button>Add post</button>
+            </form>
             {postsElements}
         </div>
     )

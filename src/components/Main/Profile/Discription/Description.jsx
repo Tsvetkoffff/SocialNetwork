@@ -9,7 +9,7 @@ const Description = (props) => {
     }
 
     return (
-        <div className={s.persen}>
+        <div className={s.person}>
             <img src={props.userProfile.photos.large} alt="Avatar" className="ava" />
             <p className={s.name}>{props.userProfile.fullName}</p>
         </div>

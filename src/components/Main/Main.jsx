@@ -12,7 +12,7 @@ const Main = (props) => {
     return (
         <main className={s.main}>
             <Redirect from='/' to='Users'/>
-            <Route path='/Profile' render={() =>
+            <Route path='/Profile/:userId?' render={() =>
                 <ProfileContainer/>}/>
             <Route path='/Messages' render={() =>
                 <MessagesContainer/>}/>

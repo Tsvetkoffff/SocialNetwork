@@ -6,6 +6,11 @@
     align-items     : center;
 }
 
+.loginContainer {
+    display: flex;
+    align-items: center;
+}
+
 .header p {
     margin-left: 20px;
     color      : #61DAFB;
