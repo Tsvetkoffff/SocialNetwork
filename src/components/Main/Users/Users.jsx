@@ -3,6 +3,7 @@ import s from './Users.module.css';
 import defaultPhoto from '../../../assets/img/default-user-image.png'
 import {NavLink} from "react-router-dom";
 import {usersAPI} from "../../../api/api";
+import {isFollowFetchingToggle} from "../../../redux/usersReducer";
 
 const Users = (props) => {
 
@@ -26,20 +27,26 @@ const Users = (props) => {
             </NavLink>
             {
                 u.followed
-                    ? <button onClick={() => {
-                        usersAPI.unFollowUser(u.id).then(data => {
-                            if (data.resultCode === 0) {
-                                props.unfollow(u.id)
-                            }
-                        })
-                    }}>UnFollow</button>
-                    : <button onClick={() => {
-                        usersAPI.followUser(u.id).then(data => {
-                            if (data.resultCode === 0) {
-                                props.follow(u.id)
-                            }
-                        })
-                    }}>Follow</button>
+                    ? <button disabled={props.isFollowFetching.some(id => id === u.id)}
+                              onClick={() => {
+                                  props.isFollowFetchingToggle(true, u.id);
+                                  usersAPI.unFollowUser(u.id).then(data => {
+                                      if (data.resultCode === 0) {
+                                          props.unfollow(u.id)
+                                      }
+                                  props.isFollowFetchingToggle(false, u.id);
+                                  })
+                              }}>UnFollow</button>
+                    : <button disabled={props.isFollowFetching.some(id => id === u.id)}
+                              onClick={() => {
+                                  props.isFollowFetchingToggle(true, u.id);
+                                  usersAPI.followUser(u.id).then(data => {
+                                      if (data.resultCode === 0) {
+                                          props.follow(u.id)
+                                      }
+                                  props.isFollowFetchingToggle(false, u.id);
+                                  })
+                              }}>Follow</button>
             }
             <div>
                 <p> {u.name} </p>
