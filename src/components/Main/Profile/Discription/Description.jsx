@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './Discription.module.css';
+import defaultPhoto from '../../../../assets/img/default-user-image.png'
 import Preloader from "../../../common/Preloader/Preloader";
 
 const Description = (props) => {
@@ -10,7 +11,7 @@ const Description = (props) => {
 
     return (
         <div className={s.person}>
-            <img src={props.userProfile.photos.large} alt="Avatar" className="ava" />
+            <img src={props.userProfile.photos.large !== null ? props.userProfile.photos.large : defaultPhoto } alt="Avatar" className="ava" />
             <p className={s.name}>{props.userProfile.fullName}</p>
         </div>
     )

@@ -7,11 +7,12 @@ import Music from "./Music/Music";
 import Settings from "./Settings/Settings";
 import MessagesContainer from "./Messages/MessagesContainer";
 import UsersContainer from "./Users/UsersContainer";
+import Login from "./Login/Login";
 
 const Main = (props) => {
     return (
         <main className={s.main}>
-            <Redirect from='/' to='Users'/>
+            {/*<Redirect from='/' to='Users'/>*/}
             <Route path='/Profile/:userId?' render={() =>
                 <ProfileContainer/>}/>
             <Route path='/Messages' render={() =>
@@ -21,6 +22,7 @@ const Main = (props) => {
             <Route path='/News' render={News}/>
             <Route path='/Music' render={Music}/>
             <Route path='/Settings' render={Settings}/>
+            <Route path='/Login' render={Login}/>
         </main>
     )
 };
