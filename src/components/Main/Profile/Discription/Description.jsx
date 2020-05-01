@@ -2,6 +2,7 @@ import React from 'react';
 import s from './Discription.module.css';
 import defaultPhoto from '../../../../assets/img/default-user-image.png'
 import Preloader from "../../../common/Preloader/Preloader";
+import ProfileStatus from "./ProfileStatus"
 
 const Description = (props) => {
 
@@ -13,6 +14,7 @@ const Description = (props) => {
         <div className={s.person}>
             <img src={props.userProfile.photos.large !== null ? props.userProfile.photos.large : defaultPhoto } alt="Avatar" className="ava" />
             <p className={s.name}>{props.userProfile.fullName}</p>
+            <ProfileStatus status='Hey' />
         </div>
     )
 };
