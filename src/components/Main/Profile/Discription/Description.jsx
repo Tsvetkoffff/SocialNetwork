@@ -14,7 +14,7 @@ const Description = (props) => {
         <div className={s.person}>
             <img src={props.userProfile.photos.large !== null ? props.userProfile.photos.large : defaultPhoto } alt="Avatar" className="ava" />
             <p className={s.name}>{props.userProfile.fullName}</p>
-            <ProfileStatus status='Hey' />
+            <ProfileStatus status={props.status} updateUserStatus={props.updateUserStatus} />
         </div>
     )
 };
