@@ -24,3 +24,8 @@ yarn-error.log*
 
 # idea
 .idea
+
+# images
+.png
+.svg
+.jpeg
