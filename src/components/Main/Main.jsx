@@ -5,9 +5,9 @@ import ProfileContainer from "./Profile/ProfileContainer";
 import News from "./News/News";
 import Music from "./Music/Music";
 import Settings from "./Settings/Settings";
-import MessagesContainer from "./Messages/MessagesContainer";
+import Messages from "./Messages/Messages";
 import UsersContainer from "./Users/UsersContainer";
-import Login from "./Login/Login";
+import LoginPage from "./Login/LoginPage";
 
 const Main = (props) => {
     return (
@@ -16,13 +16,14 @@ const Main = (props) => {
             <Route path='/Profile/:userId?' render={() =>
                 <ProfileContainer/>}/>
             <Route path='/Messages' render={() =>
-                <MessagesContainer/>}/>
+                <Messages/>}/>
             <Route path='/Users' render={() =>
                 <UsersContainer/>}/>
             <Route path='/News' render={News}/>
             <Route path='/Music' render={Music}/>
             <Route path='/Settings' render={Settings}/>
-            <Route path='/Login' render={Login}/>
+            <Route path='/Login' render={() =>
+                <LoginPage />}/>
         </main>
     )
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './Header.module.css';
+import {NavLink} from "react-router-dom";
 
 const Header = (props) => {
     return (
@@ -8,8 +9,11 @@ const Header = (props) => {
             <div className={s.loginContainer}>
                 {
                     props.isAuthSet
-                        ? <p> {props.login} </p>
-                        : <button>Login</button>
+                        ? <div>
+                        <p> {props.login} </p>
+                        <button onClick={props.logout}>Log out</button>
+                        </div>
+                        : <NavLink to='/login'>Login</NavLink>
                 }
                 <img src="https://ru.reactjs.org/logo-og.png" alt="WebTech"/>
             </div>

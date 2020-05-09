@@ -8,9 +8,9 @@ let mapStateToProps = state => ({
 
 let withAuthRedirect = Component => {
     let withAuthRedirectComponent = props => {
-        // if(!props.isAuthSet) {
-        //     return <Redirect to='/Login' />
-        // }
+        if(!props.isAuthSet) {
+            return <Redirect to='/Login' />
+        }
         return <Component {...props} />
     };
     return connect(mapStateToProps)(withAuthRedirectComponent)

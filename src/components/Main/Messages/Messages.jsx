@@ -2,6 +2,8 @@ import React from 'react';
 import s from './Messages.module.css';
 import DialogsItem from "./DialogsItem/DialogsItem";
 import MessagesItem from "./MessagesItem/MessagesItem";
+import {sendMessageActionCreator, updateNewMessageTextActionCreator} from "../../../redux/messagesReducer";
+import {connect} from "react-redux";
 
 const Messages = (props) => {
 
@@ -41,4 +43,22 @@ const Messages = (props) => {
     )
 };
 
-export default Messages
+let mapStateToProps = (state) => {
+    return {
+        dialogsData: state.messagesPage.dialogsData,
+        messagesData: state.messagesPage.messagesData,
+        newMessageText: state.messagesPage.newMessageText
+    }
+};
+let mapDispatchToProps = (dispatch) => {
+    return {
+        messageTextChange: (text) => {
+            dispatch(updateNewMessageTextActionCreator(text))
+        },
+        messageAdd: () => {
+            dispatch(sendMessageActionCreator())
+        }
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Messages);
