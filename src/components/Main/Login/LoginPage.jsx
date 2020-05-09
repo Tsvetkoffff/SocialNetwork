@@ -9,14 +9,16 @@ const LoginPage = props => {
         ? <ProfileContainer/>
         : <>
             <h1>Login</h1>
-            <LoginForm authorizeUser={props.authorizeUser} />
+            <LoginForm authorizeUser={props.authorizeUser} errorMessage={props.errorMessage} />
         </>
 };
 
 let mapStateToProps = state => (
     {
-        isAuthSet: state.authReducer.isAuthSet
+        isAuthSet: state.authReducer.isAuthSet,
+        errorMessage: state.authReducer.errorMessage
     }
 );
+
 
 export default connect(mapStateToProps, {authorizeUser})(LoginPage);

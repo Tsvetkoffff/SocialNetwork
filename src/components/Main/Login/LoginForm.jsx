@@ -12,7 +12,7 @@ const CustomInput = props => {
 };
 
 const LoginForm = props => {
-    return <Form onSubmit={props.authorizeUser}>
+    return <Form onSubmit={props.authorizeUser} errorMessage={props.errorMessage}>
             {props => (
                 <form onSubmit={props.handleSubmit}>
 
@@ -30,6 +30,7 @@ const LoginForm = props => {
                            type="checkbox"/>
 
                     <button type="submit">Submit</button>
+                    <span style={{color: "red"}}>{props.errorMessage}</span>
                 </form>
             )}
         </Form>
