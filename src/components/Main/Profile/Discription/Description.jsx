@@ -2,7 +2,7 @@ import React from 'react';
 import s from './Discription.module.css';
 import defaultPhoto from '../../../../assets/img/default-user-image.png'
 import Preloader from "../../../common/Preloader/Preloader";
-import ProfileStatus from "./ProfileStatus"
+import ProfileStatus from "./ProfileStatusWithHooks"
 
 const Description = (props) => {
 
