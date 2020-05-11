@@ -4,6 +4,8 @@ import DialogsItem from "./DialogsItem/DialogsItem";
 import MessagesItem from "./MessagesItem/MessagesItem";
 import {sendMessageActionCreator, updateNewMessageTextActionCreator} from "../../../redux/messagesReducer";
 import {connect} from "react-redux";
+import {compose} from "redux";
+import withAuthRedirect from "../../hoc/withAuthRedirect";
 
 const Messages = (props) => {
 
@@ -61,4 +63,4 @@ let mapDispatchToProps = (dispatch) => {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Messages);
+export default compose(connect(mapStateToProps, mapDispatchToProps), withAuthRedirect)(Messages);

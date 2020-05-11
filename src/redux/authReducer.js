@@ -33,7 +33,7 @@ export const setErrorMessage = (errorMessage) => ({type: SET_ERROR_MESSAGE, erro
 
 export const getAuthUserData = () => {
     return (dispatch) => {
-        authAPI.getAuthUserData().then(data => {
+        return authAPI.getAuthUserData().then(data => {
             if(data.resultCode === 0) {
                 let {id, email, login} = data.data;
                 dispatch(setAuthUserData(id, email, login, true))

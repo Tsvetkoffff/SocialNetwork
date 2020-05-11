@@ -5,13 +5,15 @@ import messagesReducer from "./messagesReducer";
 import asideReducer from "./asideReducer";
 import usersReducer from "./usersReducer";
 import authReducer from "./authReducer";
+import appReducer from "./appReducer";
 
 let reducers = combineReducers({
-    profilePage: profileReducer,
+    profile: profileReducer,
     messagesPage: messagesReducer,
     asideData: asideReducer,
     usersPage: usersReducer,
-    authReducer: authReducer
+    authReducer: authReducer,
+    app: appReducer
 });
 
 let store = createStore(reducers, applyMiddleware(thunkMiddleware));

@@ -2,6 +2,7 @@ import React from "react";
 import {Form, Field} from "react-final-form";
 import {required} from "../../../utilities/validators";
 import style from "./Login.module.css";
+import Preloader from "../../common/Preloader/Preloader";
 
 const CustomInput = props => {
     return (<div>
